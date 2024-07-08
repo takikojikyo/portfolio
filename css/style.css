@@ -1,0 +1,712 @@
+html{
+  font-size: 100%;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+img{
+  width: 100%;
+  vertical-align: bottom;
+  max-width: 100%;
+}
+body{
+  font-family: "BIZ UDPGothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+}
+.en{
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*共通*/
+.inner{
+  max-width: 1200px;
+  padding: 0 4%;
+  margin: 0 auto;
+}
+
+.section-title{
+  text-align: center;
+  font-size: 36px;
+  line-height: 0.8;
+  margin-bottom: 50px;
+}
+.section-title .en{
+  font-size: 80px;
+  color: #FFD8A5;
+}
+
+/*header*/
+.logo{
+  font-size: 24px;
+  padding: 20px;
+}
+.toggle_btn {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 100; 
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.toggle_btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.5s;
+  position: absolute; 
+}
+.toggle_btn span:nth-child(1) {
+  top: 36%;
+}
+.toggle_btn span:nth-child(2) {
+  top: 50%;
+}
+.toggle_btn span:nth-child(3) {
+  top: 64%;
+}
+
+.open .toggle_btn span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+.open .toggle_btn span:nth-child(2){
+   transform: rotate(45deg);  
+}
+
+.open .toggle_btn span:nth-child(3) {
+  transform: rotate(45deg) ;
+  top: 50%;
+}
+.header-nav{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 50%;
+  height: 100vh;
+  opacity: 0;
+  transition: all 0.5s ;
+  background-color: white;
+  z-index: 90;
+}
+.open .header-nav{
+  right: 0;
+  opacity: 1;
+}
+.header-nav ul{
+  margin-top: 25%;
+  text-align: center;
+}
+.header-nav li{
+  margin-bottom: 30px;
+}
+.header-nav a{
+  transition: all 0.5s;
+  font-weight: bold;
+}
+.header-nav a:hover{
+  color: #3587B5;
+  opacity: 0.8;
+}
+
+.mask{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  opacity: 0.8;
+  z-index: 80;
+}
+.open .mask{
+  right: 0;
+}
+
+
+
+/*メインビジュアル*/
+.main-visual{
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 100vh;
+  position: relative;
+
+}
+.web-title{
+  display: inline-block;
+  position: absolute;
+  line-height: 1.2;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  font-size: 48px;
+}
+.scrolldown{
+position:absolute;
+left:4%;
+bottom:80px;
+height:50px;
+}
+.scrolldown span{
+position: absolute;
+left:-15px;
+top: -15px;
+color: #333;
+font-size: 0.7rem;
+letter-spacing: 0.05em;
+}
+
+
+.scrolldown::after{
+content: "";
+position: absolute;
+top: 0;
+width: 1px;
+height: 30px;
+background: #333;
+animation: pathmove 1.4s ease-in-out infinite;
+opacity:0;
+}
+
+
+@keyframes pathmove{
+0%{
+  height:0;
+  top:0;
+  opacity: 0;
+}
+30%{
+  height:30px;
+  opacity: 1;
+}
+100%{
+  height:0;
+  top:50px;
+  opacity: 0;
+}
+}
+
+
+#main-container{
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  width: 100%;
+}
+
+/*front-about*/
+.front-about{
+  padding: 80px 0;
+}
+.fa-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 150px;
+}
+.fa-left,.fa-right{
+  width: 48%;
+}
+.fa-left{
+  position: relative;
+  text-align: right;
+}
+.fa-left1,.fa-left2{
+  width: 90%;
+  height: 350px;
+  object-fit: cover;
+  object-position: 10% 50%;
+  border-radius: 30px;
+}
+
+.fa-left2{
+  position: absolute;
+  bottom: -20%;
+  left: 0;
+  z-index: -1;
+}
+.fa-message{
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  display: inline-block;
+
+}
+.fa-text p{
+  margin-bottom: 15px;
+}
+
+.fa-btn a {
+  background: #3587B5;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 30%;
+  padding: 15px 0;
+  color: #fff;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+.fa-btn a:hover {
+  opacity: 0.9;
+}
+.fa-btn a:before, .fa-btn a:after {
+content: "";
+position: absolute;
+display: block;
+transition: all 0.3s;
+right: 1.2rem;
+top: 50%;
+}
+.fa-btn a:before {
+width: 1.4rem;
+height: 2px;
+background: #fff;
+transform: translateY(-50%);
+}
+.fa-btn a:after {
+opacity: 0;
+width: 0;
+height: 0;
+border-top: solid 2px currentColor;
+border-right: solid 2px currentColor;
+transform: translateY(-50%) rotate(45deg);
+}
+.fa-btn a:hover:before {
+width: 1.5rem;
+}
+.fa-btn a:hover:after {
+opacity: 1;
+width: 8px;
+height: 8px;
+}
+
+/*front-work*/
+.fw-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.fw-box a{
+  display: block;
+  transition: all 0.5s;
+}
+.fw-box a:hover{
+  opacity: 0.8;
+}
+.fw-box a:active img{
+  box-shadow: 0px 0px 1px #ccc;
+  transform: translateY(4px);
+}
+.fw-box img{
+  height: 300px;
+  object-fit: cover;
+  object-position: 50% 0;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 4px 4px 6px 0 #ccc;
+}
+.fw-box li{
+  text-align: center;
+  width: 48%;
+  margin-bottom: 30px;
+}
+
+/*front-service*/
+.front-service{
+  padding: 80px 0;
+}
+.fs-box{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.fs-box li{
+  width: 48%;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 4px 4px 6px 0 #ccc;
+}
+.fs-box img{
+  width: 100px;
+  margin-bottom: 30px;
+}
+.fs-box h3{
+  margin-bottom: 20px;
+}
+.fs-box p{
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/*contact*/
+.contact{
+  padding: 50px 0;
+  background-color: #F8F6F6;
+}
+.contact-btn a {
+  position: relative;
+  z-index: 10;
+  color: white;
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  transition: 0.3s ease-in-out;
+  border-radius: 20px;
+  box-shadow: 4px 4px 6px 0 #ccc;
+}
+.contact-btn .c-1{
+  font-weight: bold;
+  display: block;
+  font-size: 24px;
+}
+.contact-btn .c-2{
+  font-size: 12px;
+}
+
+.contact-btn a:hover{
+  color: #333;
+}
+.contact-btn a::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+background-color: #3587B5;
+border-radius: 20px;
+transition: all 0.3s;
+}
+.contact-btn a:hover::before {
+opacity: 0;
+transform: scale(0.4, 0.4);
+}
+.contact-btn a::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+opacity: 0;
+transition: all 0.3s;
+border: 2px solid #3587B5;
+border-radius: 20px;
+transform: scale(1.2, 1.2);
+background: #fff;
+}
+.contact-btn a:hover::after {
+opacity: 1;
+transform: scale(1, 1);
+}
+
+/*footer*/
+#footer{
+  padding: 50px 0;
+  background: #FFD8A5;
+  text-align: center;
+}
+.footer-title{
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.copyright{
+  font-size: 12px;
+}
+
+/*下層ページ共通*/
+.page-title{
+  width: 100%;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  text-shadow: 2px 2px 2px #ccc;
+  font-size: 36px;
+  line-height: 0.9;
+  margin-bottom: 80px;
+}
+.page-title .en{
+  font-size: 80px;
+}
+
+/*about*/
+.about{
+  margin-bottom: 80px;
+}
+.about-title{
+  background-image: url("../img/aaron-burden-2IjiGDZw-q0-unsplash.jpg");
+  background-position: 50% 70%;
+}
+.about-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-box li{
+  width: 46%;
+}
+.about-box li img{
+  border-radius: 20px;
+}
+.about-box h3{
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.about-box .en{
+  font-size: 18px;
+}
+.about-box p{
+  margin-bottom: 20px;
+}
+
+/*skill*/
+.skill{
+  margin-bottom: 80px;
+}
+.skill-box{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.skill-box li{
+  width: 23%;
+}
+.skill-box img{
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+/*work*/
+.work{
+  margin-bottom: 80px;
+}
+.works-title{
+  background-image: url("../img/25263701.jpg");
+  padding: 50px;
+}
+.work-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.work img{
+  width: 50%;
+  object-fit: cover;
+margin-bottom: 40px;
+}
+.work-text{
+  width: 45%;
+}
+.work p{
+  margin-bottom: 20px;
+}
+.work p:last-of-type{
+  margin-bottom: 0;
+}
+.work-title{
+  margin-bottom: 20px;
+}
+.work-go{
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #3587B5;
+  border-bottom: 1px solid #3587B5;
+  transition: all 0.5s;
+}
+.work-go:hover{
+  opacity: 0.7;
+}
+
+.work-pagenation{
+  display: flex;
+  justify-content: space-between;
+}
+.work-pagenation a{
+  transition: all 0.5s;
+}
+.work-pagenation a:hover{
+  opacity: 0.8;
+  color: #3587B5;
+}
+
+
+/*レシポンシブ*/
+
+@media(max-width:960px){
+  /*work*/
+.work-box{
+  flex-direction: column;
+}
+
+.work img{
+  width: 100%;
+}
+.work-text{
+  width: 100%;
+}
+
+}
+@media(max-width:768px){
+  .section-title{
+    font-size: 20px;
+  }
+  .section-title .en{
+    font-size: 48px;
+  }
+  
+  /*header*/
+.logo{
+  font-size: 20px;
+  }
+
+.header-nav{
+  width: 100%;
+}
+.mask{
+  display: none;
+}
+
+/*メインビジュアル*/
+.web-title{
+  top: 34%;
+  padding: 25px;
+  font-size: 36px;
+}
+.scrolldown{
+left:6%;
+}
+
+/*front-about*/
+.front-about{
+  padding: 80px 0;
+}
+.fa-box{
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.fa-left,.fa-right{
+  width: 90%;
+}
+
+.fa-left1,.fa-left2{
+  width: 90%;
+}
+.fa-left{
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.fa-left2{
+  bottom: -5%;
+  right: 0;
+  left: auto;
+}
+.fa-message{
+  font-size: 24px;
+}
+.fa-btn a {
+  max-width: 90%;
+}
+
+
+/*front-work*/
+.fw-box{
+ flex-direction: column;
+}
+.fw-box li{
+  width: 100%;
+}
+
+/*front-service*/
+.fs-box{
+  flex-direction: column;
+  gap: 20px;
+}
+.fs-box li{
+  width: 100%;
+  padding: 20px;
+}
+.fs-box img{
+  width: 80px;
+}
+.fs-box h3{
+  text-align: left;
+}
+
+.contact-btn .c-1{
+  font-size: 20px;
+}
+
+/*footer*/
+#footer{
+  padding: 30px 0;
+}
+.footer-title{
+  font-size: 20px;
+}
+
+/*下層ページ共通*/
+.page-title{
+  padding: 50px 0;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+.page-title .en{
+  font-size: 48px;
+}
+
+/*about*/
+
+.about-box{
+  flex-direction: column;
+}
+.about-box li{
+  width: 90%;
+}
+.about-box li img{
+  margin-bottom: 20px;
+}
+.about-box h3{
+  font-size: 20px;
+}
+
+/*skill*/
+.skill-box img{
+  width: 64px;
+  margin-bottom: 10px;
+}
+.skill-box p{
+  font-size: 12px;
+}
+
+
+}
